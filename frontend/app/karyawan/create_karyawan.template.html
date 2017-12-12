@@ -1,0 +1,41 @@
+<md-dialog>
+    <form ng-cloak>
+         
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Create Karyawan</h2>
+            </div>
+        </md-toolbar>
+ 
+        <md-dialog-content>
+            <div class="md-dialog-content">
+ 
+                <md-input-container class="md-block">
+                    <label>Nama</label>
+                    <input ng-model="nama">
+                </md-input-container>
+ 
+                <md-input-container class="md-block">
+                    <label>Jabatan</label>
+                    <input ng-model="jabatan">
+                </md-input-container>
+ 
+                <md-input-container class="md-block">
+                    <label>Alamat</label>
+                    <textarea ng-model="alamat"></textarea>
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>No Handphone</label>
+                    <input ng-model="no_hp">
+                </md-input-container>
+ 
+            </div>
+        </md-dialog-content>
+ 
+        <md-dialog-actions layout="row">
+            <md-button ng-click="cancel()">Cancel</md-button>
+            <md-button ng-click="createKaryawan()" class="md-primary">Create</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

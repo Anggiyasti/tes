@@ -1,0 +1,48 @@
+<div layout="row" ng-controller="karyawanController" ng-cloak>
+    <div flex="10"></div>
+ 
+    <div flex="80" class='m-20px-0'>
+ 
+        <!-- page title & 'create karyawan' button -->
+        <md-toolbar class="md-hue-2">
+            <div class="md-toolbar-tools">
+                <!-- page title -->
+                <div flex md-truncate>
+                    <h3 class="md-headline">Karyawan</h3>
+                </div>
+ 
+                <!-- button for creating karyawan -->
+                <md-button class="md-raised" ng-click="showCreateProducKaryawanForm()">Create</md-button>
+
+            </div>
+        </md-toolbar>
+  
+        <md-content flex>
+            <!-- show karyawan record list -->
+            <md-list ng-init="readKaryawan()">
+                <md-list-item class="md-3-line" ng-repeat="karyawan_item in karyawan">
+ 
+                    <!-- karyawan information -->
+                    <div class="md-list-item-text">
+                        <h3>{{karyawan_item.id_pegawai}}</h3>
+                        <h4>{{karyawan_item.nama}}</h4>
+                        <p>{{karyawan_item.jabatan}}</p>
+                    </div>
+ 
+                    <!-- 'read one', 'edit' and 'delete' buttons -->
+                    <div class="md-secondary-container">
+                        <!-- 'read one' button will be here -->
+                        <md-button class="md-raised md-info" ng-click="detailKaryawan(karyawan_item.id_pegawai)">Detail</md-button>
+                        <!-- 'edit' button will be here -->
+                        <md-button class="md-raised md-primary" ng-click="showUpdateKaryawanForm(karyawan_item.id_pegawai)">Edit</md-button>
+                        <!-- 'delete' button will be here -->
+                        <md-button class="md-raised md-danger" ng-click="confirmDeleteKaryawan($event, karyawan_item.id_pegawai)">Delete</md-button>
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </div>
+ 
+    <div flex="10"></div>
+</div> <!-- end row -->
